@@ -1,0 +1,71 @@
+{
+  "name": "contentforge-app",
+  "version": "1.0.0",
+  "description": "Application de bureau pour la création et gestion de contenu avec ContentForge CLI",
+  "main": "dist-electron/main.js",
+  "author": "ContentForge Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "preview": "vite preview",
+    "e2e": "cypress run",
+    "e2e:dev": "cypress open"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.0",
+    "reactour": "^1.19.4",
+    "styled-components": "^5.3.11",
+    "tailwindcss": "^3.4.17",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.21",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.57.1",
+    "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.4.19",
+    "vite-plugin-electron": "^0.15.6",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  },
+  "build": {
+    "appId": "com.contentforge.app",
+    "productName": "ContentForge",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist",
+      "dist-electron"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development"
+    }
+  }
+}
