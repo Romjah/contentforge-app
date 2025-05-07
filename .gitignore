@@ -12,6 +12,7 @@ node_modules
 dist
 dist-ssr
 *.local
+package-lock.json
 
 # Editor directories and files
 .vscode/*
@@ -38,3 +39,9 @@ build/
 
 # Electron specific
 .electron-builder.env
+dist-electron/
+
+# TypeScript declaration files
+*.d.ts
+!src/types/electron.d.ts
+*.tsbuildinfo
